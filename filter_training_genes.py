@@ -12,7 +12,7 @@ def read_error_file(error_file):
 	gene_model_list = []
 	with open(error_file) as error_data:
 		for line in error_data:
-			sO = re.search(r'(contig_[0-9]+_[0-9]+\-[0-9]+)', line)
+			sO = re.search(r'In sequence ([\w\d_.-]+_[\d]+\-[\d]+)', line)
 			if sO:
 				gene_model_list.append(sO.group(1))
 	return gene_model_list
